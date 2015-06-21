@@ -57,16 +57,6 @@ shinyUI(
                                h3('Render 1 month', align = "center"),
                                plotOutput("stock_statistics_1month")
                         ),
-                        tabPanel(p(icon("map-marker"), "Stock Predicting"),
-                            column(3,
-                                wellPanel(
-                                    radioButtons(
-                                        "populationCategory",
-                                        "Population impact category:",
-                                        c("Both" = "both", "Injuries" = "injuries", "Fatalities" = "fatalities"))
-                                )
-                            )
-                        ),
                         # Data 
                         tabPanel(p(icon("table"), "Data"),
                             downloadButton('downloadData', 'Download'),
