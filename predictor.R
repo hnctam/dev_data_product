@@ -156,3 +156,7 @@ test <- function() {
   chartSeries(to.weekly(XPTUSD),name="Platinum (.oz) in $USD",up.col="white",dn.col="blue")
   par(ask=FALSE)
 }
+
+predictTestSymbol <- function(environment, input, output) {
+  print(input$btnPredict)
+}

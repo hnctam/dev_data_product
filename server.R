@@ -26,10 +26,15 @@ system_environment <- new.env()
 # Shiny server 
 shinyServer(function(input, output, session) {
     
-    observe({
-        if(input$btnPredict == 0) return()
-        predictSymbol(system_environment, input, output)
+    observeEvent(input$btnPredict, {
+      if (input$btnPredict > 0) {
+        predictSymbol(system_environment, input, output)  
+      }
     })
+    #observe({
+    #    if(input$btnPredict == 0) return()
+    #    predictSymbol(system_environment, input, output)
+    #})
     
     # Render Plots
     output$downloadData <- downloadHandler(
